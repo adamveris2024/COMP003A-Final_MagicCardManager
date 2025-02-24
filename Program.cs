@@ -57,7 +57,7 @@ namespace COMP003A_Final_MagicCardManager
                         Console.WriteLine("Card successfully deleted!");
 
                         /// <summary>
-                        /// Code here to check if the card exists and than delete it.
+                        /// Code here to check if the card exists, if so than set as "".
                         /// </summary>
                         break;
 
@@ -68,7 +68,7 @@ namespace COMP003A_Final_MagicCardManager
 
                         /// <summary>
                         /// Take the user's input and if the input matches a value thats stored, change that value
-                        /// to "". If not found, shoot error message
+                        /// to new value. If not found, shoot error message
                         /// </summary>
                         
                         Console.Write("What is the new name of the card?: ");
