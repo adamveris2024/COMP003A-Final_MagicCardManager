@@ -23,6 +23,7 @@ namespace COMP003A_Final_MagicCardManager
                 {
                     throw new ArgumentException("Card name is empty.");
                 }
+                _name = value;
             }
         }
         public int Price
@@ -37,15 +38,18 @@ namespace COMP003A_Final_MagicCardManager
                 {
                     throw new ArgumentException("Card price is below 0.");
                 }
+                _price = value;
             }
         }
-
-        public abstract void ColorDescription();
 
         public Card(string name, int price)
         {
             Name = name;
             Price = price;
         }
+
+        public abstract void ColorDescription();
+
+
     }
 }

@@ -28,8 +28,7 @@ namespace COMP003A_Final_MagicCardManager
                 Console.WriteLine(""); // line spacing
                 Console.Write("Your choice: ");
                 int choice = int.Parse(Console.ReadLine());
-
-                try
+                try 
                 {
                     switch (choice)
                     {
@@ -54,6 +53,7 @@ namespace COMP003A_Final_MagicCardManager
                                     Console.Write("What is the price of your card?: ");
                                     int redPrice = int.Parse(Console.ReadLine());
                                     Red red = new Red(redName, redPrice);
+                                    Cards.Add(red);
                                 break;
                                 // Green
                                 case 2:
@@ -62,7 +62,8 @@ namespace COMP003A_Final_MagicCardManager
                                     Console.Write("What is the price of your card?: ");
                                     int greenPrice = int.Parse(Console.ReadLine());
                                     Green green = new Green(greenName, greenPrice);
-                                    break;
+                                    Cards.Add(green);
+                                break;
                                 // Blue
                                 case 3:
                                     Console.Write("What is the name of your card?: ");
@@ -70,6 +71,7 @@ namespace COMP003A_Final_MagicCardManager
                                     Console.Write("What is the price of your card?: ");
                                     int bluePrice = int.Parse(Console.ReadLine());
                                     Blue blue = new Blue(blueName, bluePrice);
+                                    Cards.Add(blue);
                                 break;
                                 // Black
                                 case 4:
@@ -78,6 +80,7 @@ namespace COMP003A_Final_MagicCardManager
                                     Console.Write("What is the price of your card?: ");
                                     int blackPrice = int.Parse(Console.ReadLine());
                                     Black black = new Black(blackName, blackPrice);
+                                    Cards.Add(black);
                                 break;
                                 // White
                                 case 5:
@@ -86,6 +89,7 @@ namespace COMP003A_Final_MagicCardManager
                                     Console.Write("What is the price of your card?: ");
                                     int whitePrice = int.Parse(Console.ReadLine());
                                     White white = new White(whiteName, whitePrice);
+                                    Cards.Add(white);
                                 break;
                             }
                             // Catch whether user's input is less than or greater than 1-5.
@@ -103,10 +107,18 @@ namespace COMP003A_Final_MagicCardManager
 
                         // Display the cards saved
                         case 2:
-                            Console.WriteLine($"Display cards");
-                            /// <summary>
-                            /// Code here to check if there are cards to display. If not shoot error message.
-                            /// </summary>
+                            foreach (Card card in Cards)
+                            {
+                                Console.WriteLine($"- Name: {card.Name}");
+                                Console.WriteLine($"- Price: {card.Price}");
+                                card.ColorDescription();
+                                Console.WriteLine("");
+                            }
+
+                            if (Cards.Count == 0)
+                            {
+                                Console.WriteLine("There are no cards saved.");
+                            }
                             break;
 
                         // Delete a card
