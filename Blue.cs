@@ -8,7 +8,7 @@ namespace COMP003A_Final_MagicCardManager
 {
     internal class Blue : Card
     {
-        public Blue(string name, int price) : base(name, price)
+        public Blue(string name, double price) : base(name, price)
         {
         }
         public override void ColorDescription()

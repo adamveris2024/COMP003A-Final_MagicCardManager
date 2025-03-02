@@ -50,8 +50,8 @@ namespace COMP003A_Final_MagicCardManager
                                 case 1:
                                     Console.Write("What is the name of your card?: ");
                                     string redName = Console.ReadLine();
-                                    Console.Write("What is the price of your card?: ");
-                                    int redPrice = int.Parse(Console.ReadLine());
+                                    Console.Write("What is the price of your card?: $");
+                                    double redPrice = double.Parse(Console.ReadLine());
                                     Red red = new Red(redName, redPrice);
                                     Cards.Add(red);
                                 break;
@@ -59,8 +59,8 @@ namespace COMP003A_Final_MagicCardManager
                                 case 2:
                                     Console.Write("What is the name of your card?: ");
                                     string greenName = Console.ReadLine();
-                                    Console.Write("What is the price of your card?: ");
-                                    int greenPrice = int.Parse(Console.ReadLine());
+                                    Console.Write("What is the price of your card?: $");
+                                    double greenPrice = double.Parse(Console.ReadLine());
                                     Green green = new Green(greenName, greenPrice);
                                     Cards.Add(green);
                                 break;
@@ -68,8 +68,8 @@ namespace COMP003A_Final_MagicCardManager
                                 case 3:
                                     Console.Write("What is the name of your card?: ");
                                     string blueName = Console.ReadLine();
-                                    Console.Write("What is the price of your card?: ");
-                                    int bluePrice = int.Parse(Console.ReadLine());
+                                    Console.Write("What is the price of your card?: $");
+                                    double bluePrice = double.Parse(Console.ReadLine());
                                     Blue blue = new Blue(blueName, bluePrice);
                                     Cards.Add(blue);
                                 break;
@@ -77,8 +77,8 @@ namespace COMP003A_Final_MagicCardManager
                                 case 4:
                                     Console.Write("What is the name of your card?: ");
                                     string blackName = Console.ReadLine();
-                                    Console.Write("What is the price of your card?: ");
-                                    int blackPrice = int.Parse(Console.ReadLine());
+                                    Console.Write("What is the price of your card?: $");
+                                    double blackPrice = double.Parse(Console.ReadLine());
                                     Black black = new Black(blackName, blackPrice);
                                     Cards.Add(black);
                                 break;
@@ -86,8 +86,8 @@ namespace COMP003A_Final_MagicCardManager
                                 case 5:
                                     Console.Write("What is the name of your card?: ");
                                     string whiteName = Console.ReadLine();
-                                    Console.Write("What is the price of your card?: ");
-                                    int whitePrice = int.Parse(Console.ReadLine());
+                                    Console.Write("What is the price of your card?: $");
+                                    double whitePrice = double.Parse(Console.ReadLine());
                                     White white = new White(whiteName, whitePrice);
                                     Cards.Add(white);
                                 break;
@@ -110,7 +110,7 @@ namespace COMP003A_Final_MagicCardManager
                             foreach (Card card in Cards)
                             {
                                 Console.WriteLine($"- Name: {card.Name}");
-                                Console.WriteLine($"- Price: {card.Price}");
+                                Console.WriteLine($"- Price: ${card.Price}");
                                 card.ColorDescription();
                                 Console.WriteLine("");
                             }

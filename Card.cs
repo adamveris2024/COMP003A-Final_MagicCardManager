@@ -9,7 +9,7 @@ namespace COMP003A_Final_MagicCardManager
     abstract internal class Card
     {
         private string _name;
-        private int _price;
+        private double _price;
 
         public string Name
         {
@@ -26,7 +26,7 @@ namespace COMP003A_Final_MagicCardManager
                 _name = value;
             }
         }
-        public int Price
+        public double Price
         {
             get
             {
@@ -34,7 +34,7 @@ namespace COMP003A_Final_MagicCardManager
             }
             set
             {
-                if (int.IsNegative(value))
+                if (double.IsNegative(value))
                 {
                     throw new ArgumentException("Card price is below 0.");
                 }
@@ -42,7 +42,7 @@ namespace COMP003A_Final_MagicCardManager
             }
         }
 
-        public Card(string name, int price)
+        public Card(string name, double price)
         {
             Name = name;
             Price = price;
