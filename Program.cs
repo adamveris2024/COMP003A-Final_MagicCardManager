@@ -8,6 +8,7 @@ namespace COMP003A_Final_MagicCardManager
     {
         static void Main(string[] args)
         {
+
             // Menu
             {
                 Console.WriteLine("---------------------------------------------------");
