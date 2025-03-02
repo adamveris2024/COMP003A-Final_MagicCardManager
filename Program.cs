@@ -113,13 +113,14 @@ namespace COMP003A_Final_MagicCardManager
 
                         // Display the cards saved
                         case 2:
+                            // This displays the card name and price for each card in the list.
                             foreach (Card card in Cards)
                             {
                                 CardUtility.DescribeCard(card.Name, card.Price);
                                 card.ColorDescription();
                                 Console.WriteLine("");
                             }
-
+                            // this checks if the list is empty, than it shoots a message if true.
                             if (Cards.Count == 0)
                             {
                                 Console.WriteLine("There are no cards saved.");
@@ -131,12 +132,19 @@ namespace COMP003A_Final_MagicCardManager
                             Console.WriteLine("Thank you for using the MTG Card Manager! Goodbye!");
                         break;
                     }
-
+                    // This ends the loop officially. It cannot be in the while loop because the loop will never end.
                     if (choice == 3)
                     {
                         break;
                     }
+                    // This checks if the input it less than or greater than 1-3. If so it shoots an error message.
+                    if (choice < 0 || choice >= 4)
+                    {
+                        Console.WriteLine("Invalid input. Please try again");
+                        continue;
+                    }
                 }
+                // this catches any errors in format and shoots an error message.
                 catch (Exception ex)
                 {
                     Console.WriteLine($"ERROR: {ex.Message}. Please try again.\n");
