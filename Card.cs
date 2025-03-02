@@ -19,7 +19,6 @@ namespace COMP003A_Final_MagicCardManager
             }
             set
             {
-                // Use the value parameter instead of Name property to prevent recursion.
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException("Card name is empty.");
@@ -34,7 +33,6 @@ namespace COMP003A_Final_MagicCardManager
             }
             set
             {
-                // Use the value parameter instead of Name property to prevent recursion.
                 if (int.IsNegative(value))
                 {
                     throw new ArgumentException("Card price is below 0.");
