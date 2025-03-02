@@ -109,8 +109,7 @@ namespace COMP003A_Final_MagicCardManager
                         case 2:
                             foreach (Card card in Cards)
                             {
-                                Console.WriteLine($"- Name: {card.Name}");
-                                Console.WriteLine($"- Price: ${card.Price}");
+                                CardUtility.DescribeCard(card.Name, card.Price);
                                 card.ColorDescription();
                                 Console.WriteLine("");
                             }
