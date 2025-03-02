@@ -8,5 +8,9 @@ namespace COMP003A_Final_MagicCardManager
 {
     internal class Green : Card
     {
+        public override void ColorDescription()
+        {
+            Console.WriteLine("Green is one of the five Colors of mana in Magic. It is drawn from the power of forests and embodies the principles of instinct and interdependence.");
+        }
     }
 }

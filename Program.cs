@@ -8,7 +8,7 @@ namespace COMP003A_Final_MagicCardManager
     {
         static void Main(string[] args)
         {
-
+            List<Card> Cards = new List<Card>();
             // Menu
             {
                 Console.WriteLine("---------------------------------------------------");

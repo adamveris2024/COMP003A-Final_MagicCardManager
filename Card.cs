@@ -39,5 +39,7 @@ namespace COMP003A_Final_MagicCardManager
                 }
             }
         }
+
+        public abstract void ColorDescription();
     }
 }
