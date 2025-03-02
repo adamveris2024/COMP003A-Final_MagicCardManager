@@ -10,6 +10,7 @@ namespace COMP003A_Final_MagicCardManager
         {
             List<Card> Cards = new List<Card>();
             // Menu
+            while (true)
             {
                 Console.WriteLine("---------------------------------------------------");
                 Console.WriteLine("|                                                 |");
@@ -28,65 +29,129 @@ namespace COMP003A_Final_MagicCardManager
                 Console.Write("Your choice: ");
                 int choice = int.Parse(Console.ReadLine());
 
-                switch (choice)
+                try
                 {
-                    // Add a card
-                    case 1:
-                        Console.Write("What is the name of the card?: ");
-                        // Read input
-                        Console.Write("What is the color/colors of the card?: ");
-                        // Read input
-                        Console.Write("What is the price of the card?: ");
-                        // Read input
-                        Console.WriteLine("Card has been successfully added!");
-                        break;
+                    switch (choice)
+                    {
+                        // Add a card
+                        case 1:
+                            Console.WriteLine("What is the color of your card?");
+                            Console.WriteLine("");
+                            Console.WriteLine("1. Red");
+                            Console.WriteLine("2. Green");
+                            Console.WriteLine("3. Blue");
+                            Console.WriteLine("4. Black");
+                            Console.WriteLine("5. White");
+                            Console.Write("Your choice: ");
+                            // Read input
+                            int choice2 = int.Parse(Console.ReadLine());
+                            switch (choice2)
+                            {
+                                // Red
+                                case 1:
+                                    Console.Write("What is the name of your card?: ");
+                                    string redName = Console.ReadLine();
+                                    Console.Write("What is the price of your card?: ");
+                                    int redPrice = int.Parse(Console.ReadLine());
+                                    Red red = new Red(redName, redPrice);
+                                break;
+                                // Green
+                                case 2:
+                                    Console.Write("What is the name of your card?: ");
+                                    string greenName = Console.ReadLine();
+                                    Console.Write("What is the price of your card?: ");
+                                    int greenPrice = int.Parse(Console.ReadLine());
+                                    Green green = new Green(greenName, greenPrice);
+                                    break;
+                                // Blue
+                                case 3:
+                                    Console.Write("What is the name of your card?: ");
+                                    string blueName = Console.ReadLine();
+                                    Console.Write("What is the price of your card?: ");
+                                    int bluePrice = int.Parse(Console.ReadLine());
+                                    Blue blue = new Blue(blueName, bluePrice);
+                                break;
+                                // Black
+                                case 4:
+                                    Console.Write("What is the name of your card?: ");
+                                    string blackName = Console.ReadLine();
+                                    Console.Write("What is the price of your card?: ");
+                                    int blackPrice = int.Parse(Console.ReadLine());
+                                    Black black = new Black(blackName, blackPrice);
+                                break;
+                                // White
+                                case 5:
+                                    Console.Write("What is the name of your card?: ");
+                                    string whiteName = Console.ReadLine();
+                                    Console.Write("What is the price of your card?: ");
+                                    int whitePrice = int.Parse(Console.ReadLine());
+                                    White white = new White(whiteName, whitePrice);
+                                break;
+                            }
+                            // Catch whether user's input is less than or greater than 1-5.
+                            if (choice2 <= 0 || choice2 >= 6)
+                            {
+                                Console.WriteLine("Your input is invalid. Please try again.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Card has been successfully added!");
+                                break;
+                            }
+                            
 
-                    // Display the cards saved
-                    case 2:
-                        Console.WriteLine($"Display cards");
-                        /// <summary>
-                        /// Code here to check if there are cards to display. If not shoot error message.
-                        /// </summary>
-                    break;
+                        // Display the cards saved
+                        case 2:
+                            Console.WriteLine($"Display cards");
+                            /// <summary>
+                            /// Code here to check if there are cards to display. If not shoot error message.
+                            /// </summary>
+                            break;
 
-                    // Delete a card
-                    case 3:
-                        Console.Write("What is the name of the card you want to delete: ");
-                        // Read input
+                        // Delete a card
+                        case 3:
+                            Console.Write("What is the name of the card you want to delete: ");
+                            // Read input
 
-                        // this line will only execute if all conditions have been met
-                        Console.WriteLine("Card successfully deleted!");
+                            // this line will only execute if all conditions have been met
+                            Console.WriteLine("Card successfully deleted!");
 
-                        /// <summary>
-                        /// Code here to check if the card exists, if so than set as "".
-                        /// </summary>
-                        break;
+                            /// <summary>
+                            /// Code here to check if the card exists, if so than set as "".
+                            /// </summary>
+                            break;
 
-                    // Edit a card.
-                    case 4:
-                        Console.Write("What is the name of the card you want to edit?: ");
-                        // Read input
+                        // Edit a card.
+                        case 4:
+                            Console.Write("What is the name of the card you want to edit?: ");
+                            // Read input
 
-                        /// <summary>
-                        /// Take the user's input and if the input matches a value thats stored, change that value
-                        /// to new value. If not found, shoot error message
-                        /// </summary>
-                        
-                        Console.Write("What is the new name of the card?: ");
-                        // Read input
-                        Console.Write("What is the color/colors of the card you want to edit?: ");
-                        // Read input
-                        Console.Write("What is the pricer of the card you want to edit?: ");
-                        // Read input
+                            /// <summary>
+                            /// Take the user's input and if the input matches a value thats stored, change that value
+                            /// to new value. If not found, shoot error message
+                            /// </summary>
 
-                        // This line will only execute when the conditions are all met. If not met than shoot error
-                        Console.WriteLine("Card successfully edited");
-                        break;
+                            Console.Write("What is the new name of the card?: ");
+                            // Read input
+                            Console.Write("What is the color/colors of the card you want to edit?: ");
+                            // Read input
+                            Console.Write("What is the pricer of the card you want to edit?: ");
+                            // Read input
 
-                    // Exit - Ends the loop
-                    case 5:
-                        Console.WriteLine("Goodbye!");
-                    break;
+                            // This line will only execute when the conditions are all met. If not met than shoot error
+                            Console.WriteLine("Card successfully edited");
+                            break;
+
+                        // Exit - Ends the loop
+                        case 5:
+                            Console.WriteLine("Goodbye!");
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"ERROR: {ex.Message}. Please try again.\n");
                 }
             }
         }

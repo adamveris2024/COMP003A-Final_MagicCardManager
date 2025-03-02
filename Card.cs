@@ -41,5 +41,11 @@ namespace COMP003A_Final_MagicCardManager
         }
 
         public abstract void ColorDescription();
+
+        public Card(string name, int price)
+        {
+            Name = name;
+            Price = price;
+        }
     }
 }
